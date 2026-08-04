@@ -1,0 +1,532 @@
+.realisations {
+  position: relative;
+  padding: 72px 0 66px;
+  overflow: hidden;
+  background: #ffffff;
+  isolation: isolate;
+  border-top: 7px solid #b40814;
+  border-bottom: 1px solid #eee3d5;
+}
+
+.realisations::before {
+  content: "";
+  position: absolute;
+  top: 7px;
+  left: 50%;
+  width: 130px;
+  height: 3px;
+  border-radius: 0 0 8px 8px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #d7a642 25%,
+    #d7a642 75%,
+    transparent
+  );
+  transform: translateX(-50%);
+  z-index: 3;
+}
+
+.realisations::after {
+  content: "";
+  position: absolute;
+  right: -160px;
+  bottom: -190px;
+  width: 390px;
+  height: 390px;
+  border-radius: 50%;
+  background: rgba(247, 229, 194, 0.32);
+  pointer-events: none;
+  z-index: -2;
+}
+
+.decorOne,
+.decorTwo {
+  position: absolute;
+  width: 115px;
+  height: 115px;
+  pointer-events: none;
+  opacity: 0.22;
+  background-image: radial-gradient(
+    circle,
+    rgba(201, 154, 53, 0.7) 1.3px,
+    transparent 1.3px
+  );
+  background-size: 13px 13px;
+  z-index: -1;
+}
+
+.decorOne {
+  top: 28px;
+  left: 22px;
+}
+
+.decorTwo {
+  right: 22px;
+  bottom: 26px;
+}
+
+.container {
+  width: min(1200px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+/* EN-TÊTE */
+
+.sectionHeader {
+  max-width: 740px;
+  margin: 0 auto 28px;
+  text-align: center;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  margin: 0;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: #b48120;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #c89a35;
+  box-shadow: 0 0 0 5px rgba(200, 154, 53, 0.11);
+}
+
+.sectionTitle {
+  margin: 12px 0 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.25rem, 4.5vw, 3.55rem);
+  font-weight: 700;
+  line-height: 1.07;
+  letter-spacing: -0.035em;
+  color: #1d1916;
+}
+
+.sectionTitle span {
+  color: #b40814;
+}
+
+.titleDecoration {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.titleDecoration span {
+  width: 52px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(199, 151, 52, 0.85)
+  );
+}
+
+.titleDecoration span:last-child {
+  background: linear-gradient(
+    90deg,
+    rgba(199, 151, 52, 0.85),
+    transparent
+  );
+}
+
+.titleDecoration i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #d7a641;
+}
+
+.sectionDescription {
+  max-width: 620px;
+  margin: 16px auto 0;
+  font-size: 0.98rem;
+  line-height: 1.65;
+  color: #655c54;
+}
+
+/* CARROUSEL */
+
+.marqueeArea{
+margin-top:10px;
+}
+
+.marqueeRow {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.marqueeRow::before,
+.marqueeRow::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 95px;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.marqueeRow::before {
+  left: 0;
+  background: linear-gradient(
+    90deg,
+    #ffffff 0%,
+    rgba(255, 255, 255, 0.92) 38%,
+    transparent 100%
+  );
+}
+
+.marqueeRow::after {
+  right: 0;
+  background: linear-gradient(
+    270deg,
+    #ffffff 0%,
+    rgba(255, 255, 255, 0.92) 38%,
+    transparent 100%
+  );
+}
+
+.marqueeTrack {
+  display: flex;
+  width: max-content;
+  gap: 18px;
+  padding: 8px 0;
+  will-change: transform;
+}
+
+.moveLeft {
+  animation: scrollLeft 42s linear infinite;
+}
+
+
+
+.marqueeRow:hover .marqueeTrack {
+  animation-play-state: paused;
+}
+
+/* CARTES LOGOS */
+
+.logoCard {
+  position: relative;
+  width: 225px;
+  height: 150px;
+  flex: 0 0 225px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 11px 11px 10px;
+  overflow: hidden;
+  border: 1px solid #eadfce;
+  border-radius: 18px;
+  background: #fffdf9;
+  box-shadow:
+    0 14px 32px rgba(55, 34, 12, 0.07),
+    inset 0 1px 0 rgba(255, 255, 255, 0.94);
+  transition:
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.4s ease,
+    border-color 0.4s ease;
+}
+
+.logoCard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 16px;
+  left: 16px;
+  height: 3px;
+  border-radius: 0 0 10px 10px;
+  background: linear-gradient(90deg, #b40814, #d7a642);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.35s ease;
+}
+
+.logoCard:hover {
+  transform: translateY(-6px);
+  border-color: rgba(201, 154, 53, 0.5);
+  box-shadow:
+    0 23px 44px rgba(55, 34, 12, 0.12),
+    0 8px 20px rgba(180, 8, 20, 0.04);
+}
+
+.logoCard:hover::before {
+  transform: scaleX(1);
+}
+
+.logoImageWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 104px;
+  overflow: hidden;
+  border-radius: 13px;
+  background: #ffffff;
+}
+
+.logoImage {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 8px;
+  object-fit: contain;
+  transition: transform 0.4s ease;
+}
+
+.logoCard:hover .logoImage {
+  transform: scale(1.05);
+}
+
+.logoName {
+  display: block;
+  margin-top: 7px;
+  overflow: hidden;
+  font-size: 0.74rem;
+  font-weight: 600;
+  line-height: 1.3;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #695f57;
+}
+
+/* AJUSTEMENTS LOGOS */
+
+.tradeLine {
+  transform: scale(1.65);
+}
+
+.logoCard:hover .tradeLine {
+  transform: scale(1.74);
+}
+
+.syinette {
+  transform: scale(1.32);
+}
+
+.logoCard:hover .syinette {
+  transform: scale(1.4);
+}
+
+.fabio {
+  padding: 3px;
+  transform: scale(1.04);
+}
+
+.logoCard:hover .fabio {
+  transform: scale(1.1);
+}
+
+.skEnergy {
+  padding: 2px;
+  transform: scale(1.1);
+}
+
+.logoCard:hover .skEnergy {
+  transform: scale(1.16);
+}
+
+.paradis {
+  padding: 3px;
+  transform: scale(1.1);
+}
+
+.logoCard:hover .paradis {
+  transform: scale(1.16);
+}
+
+.darkLogo {
+  padding: 0;
+  background: #07151e;
+}
+
+/* ANIMATIONS */
+
+@keyframes scrollLeft{
+
+from{
+transform:translateX(0);
+}
+
+to{
+transform:translateX(-50%);
+}
+
+}
+
+@keyframes scrollRight {
+  from {
+    transform: translateX(calc(-50% - 9px));
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* TABLETTE */
+
+@media (max-width: 900px) {
+  .realisations {
+    padding: 64px 0 56px;
+  }
+
+  .sectionHeader {
+    margin-bottom: 34px;
+  }
+
+  .logoCard {
+    width: 205px;
+    height: 142px;
+    flex-basis: 205px;
+  }
+
+  .logoImageWrapper {
+    height: 98px;
+  }
+
+  .marqueeRow::before,
+  .marqueeRow::after {
+    width: 65px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+  .realisations {
+    padding: 56px 0 48px;
+    border-top-width: 5px;
+  }
+
+  .container {
+    width: min(100% - 30px, 1200px);
+  }
+
+  .sectionHeader {
+    margin-bottom: 29px;
+  }
+
+  .sectionTitle {
+    font-size: clamp(2rem, 9vw, 2.65rem);
+  }
+
+  .sectionDescription {
+    font-size: 0.94rem;
+  }
+
+  .marqueeArea {
+    gap: 11px;
+  }
+
+  .marqueeTrack {
+    gap: 14px;
+    padding: 6px 0;
+  }
+
+  .logoCard {
+    width: 185px;
+    height: 134px;
+    flex-basis: 185px;
+    padding: 9px;
+    border-radius: 16px;
+  }
+
+  .logoImageWrapper {
+    height: 92px;
+    border-radius: 12px;
+  }
+
+  .logoName {
+    font-size: 0.7rem;
+  }
+
+  .marqueeRow::before,
+  .marqueeRow::after {
+    width: 28px;
+  }
+
+  .moveLeft {
+    animation-duration: 34s;
+  }
+
+  .moveRight {
+    animation-duration: 38s;
+  }
+}
+
+@media (max-width: 430px) {
+  .realisations {
+    padding: 48px 0 42px;
+  }
+
+  .container {
+    width: min(100% - 22px, 1200px);
+  }
+
+  .eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+  }
+
+  .sectionTitle {
+    font-size: 1.9rem;
+  }
+
+  .titleDecoration span {
+    width: 40px;
+  }
+
+  .logoCard {
+    width: 170px;
+    height: 126px;
+    flex-basis: 170px;
+  }
+
+  .logoImageWrapper {
+    height: 86px;
+  }
+}
+
+/* ACCESSIBILITÉ */
+
+@media (prefers-reduced-motion: reduce) {
+  .marqueeTrack {
+    animation: none;
+  }
+
+  .marqueeRow {
+    overflow-x: auto;
+    scrollbar-width: thin;
+  }
+
+  .logoCard,
+  .logoImage {
+    transition: none;
+  }
+
+  .logoCard:hover,
+  .logoCard:hover .logoImage,
+  .logoCard:hover .tradeLine,
+  .logoCard:hover .syinette,
+  .logoCard:hover .fabio,
+  .logoCard:hover .skEnergy,
+  .logoCard:hover .paradis {
+    transform: none;
+  }
+}

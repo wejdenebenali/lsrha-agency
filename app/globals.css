@@ -1,0 +1,162 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #ffffff;
+  color: #1c1512;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.55; }
+  50% { opacity: 0.9; }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.8s ease-out both;
+}
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.25s; }
+.delay-3 { animation-delay: 0.4s; }
+.delay-4 { animation-delay: 0.55s; }
+
+@keyframes heroFadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes heroLogoIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes logoFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+@keyframes particleDrift {
+  0% { transform: translateY(0) translateX(0); opacity: 0.15; }
+  50% { transform: translateY(-30px) translateX(10px); opacity: 0.35; }
+  100% { transform: translateY(0) translateX(0); opacity: 0.15; }
+}
+
+.hero-fade-up {
+  animation: heroFadeUp 0.8s ease-out both;
+}
+.hero-delay-1 { animation-delay: 0.2s; }
+.hero-delay-2 { animation-delay: 0.35s; }
+.hero-logo-in {
+  animation: heroLogoIn 0.9s ease-out 0.3s both;
+}
+.hero-logo-float {
+  animation: logoFloat 3s ease-in-out infinite;
+}
+.particle {
+  animation: particleDrift 8s ease-in-out infinite;
+}
+
+@keyframes blobDrift {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(35px, -40px) scale(1.08); }
+}
+.blob {
+  animation: blobDrift 20s ease-in-out infinite;
+}
+
+/* Bouton premium avec effet de lumière balayante au survol */
+.btn-premium {
+  position: relative;
+  overflow: hidden;
+}
+.btn-premium::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.55), transparent);
+  transform: skewX(-20deg);
+  transition: left 600ms ease;
+}
+.btn-premium:hover::before {
+  left: 130%;
+}
+
+/* Effet nav style Halo Lab : le texte glisse vers le haut et change de couleur au survol */
+.nav-link-reveal {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  height: 1.3em;
+}
+.nav-link-reveal .nav-text-stack {
+  display: block;
+  transition: transform 0.45s cubic-bezier(0.65, 0, 0.35, 1);
+}
+.nav-link-reveal:hover .nav-text-stack,
+.nav-link-reveal.is-active .nav-text-stack {
+  transform: translateY(-1.3em);
+}
+.nav-link-reveal .nav-text-line {
+  display: block;
+  height: 1.3em;
+  line-height: 1.3em;
+}
+
+/* Hero premium v2 */
+@keyframes fadeInUpSoft {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-in-soft {
+  animation: fadeInUpSoft 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.fade-delay-1 { animation-delay: 0.12s; }
+.fade-delay-2 { animation-delay: 0.24s; }
+.fade-delay-3 { animation-delay: 0.36s; }
+.fade-delay-4 { animation-delay: 0.48s; }
+
+@keyframes floatShape {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  50% { transform: translate(6px, -10px) rotate(2deg); }
+}
+.float-shape {
+  animation: floatShape 7s ease-in-out infinite;
+}
+
+@keyframes subtleZoom {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.04); }
+}
+.subtle-zoom {
+  animation: subtleZoom 10s ease-in-out infinite;
+}
+
+@keyframes drawLine {
+  from { stroke-dashoffset: 400; }
+  to { stroke-dashoffset: 0; }
+}
+.draw-line {
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  animation: drawLine 1.8s ease-out 0.6s forwards;
+}
