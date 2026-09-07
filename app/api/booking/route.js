@@ -29,7 +29,7 @@ export async function POST(request) {
       // Une fois un domaine vérifié dans Resend, remplacer par
       // quelque chose comme "reservation@lsrha.tn".
       from: "LSRHA Agency <contact@lsrha-agency.com>",
-      to: recipientEmail,
+      to: "contact@lsrha-agency.com",
       replyTo: email,
       subject: `Nouvelle demande de contact — ${name}`,
       text:
