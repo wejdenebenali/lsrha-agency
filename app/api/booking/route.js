@@ -28,7 +28,7 @@ export async function POST(request) {
       // Resend limite alors l'envoi à l'adresse du compte créé.
       // Une fois un domaine vérifié dans Resend, remplacer par
       // quelque chose comme "reservation@lsrha.tn".
-      from: "LSRHA Agency <onboarding@resend.dev>",
+      from: "LSRHA Agency <contact@lsrha-agency.com>",
       to: recipientEmail,
       replyTo: email,
       subject: `Nouvelle demande de contact — ${name}`,
