@@ -1,83 +1,56 @@
-# LSRHA Agency — Site web (Next.js + Tailwind CSS)
+# LSRHA Agency — Site Web & CMS
 
-## Comment lancer le projet sur votre ordinateur
+Site web professionnel développé pour **LSRHA Agency**, une agence de marketing digital basée à Sfax, Tunisie.
 
-### 1. Prérequis
-Node.js doit être installé (vous l'avez déjà, version 22.22.1 ✅).
+🔗 **Site en ligne :** https://lsrha-agency.com
 
-### 2. Installer les dépendances
-Ouvrez un terminal (invite de commande) dans ce dossier, puis tapez :
+## À propos du projet
 
-```
-npm install
-```
+Conception et développement d'un site web moderne et responsive permettant à l'agence de présenter ses services, ses réalisations, son équipe et son identité de marque.
 
-Attendez que ça se termine (peut prendre 1-2 minutes).
+Le projet intègre également un **CMS Sanity**, permettant au client de gérer le contenu du site sans intervenir dans le code.
 
-### 3. Lancer le site en local
+## Fonctionnalités
 
-```
-npm run dev
-```
+- Site responsive Desktop / Mobile
+- Présentation des services et réalisations
+- Gestion dynamique du contenu avec Sanity CMS
+- Gestion de l'équipe et des informations de l'agence
+- Formulaire de contact fonctionnel
+- Envoi d'e-mails via Resend
+- API Routes avec Next.js
+- Sitemap et robots.txt
+- Préparation SEO technique
+- Intégration Google Search Console
+- Déploiement continu avec GitHub et Vercel
+- Domaine personnalisé et configuration DNS
 
-Puis ouvrez votre navigateur à l'adresse : **http://localhost:3000**
+## Technologies utilisées
 
-Le site se met à jour automatiquement à chaque modification de code.
+**Front-end**
+- Next.js
+- React
+- JavaScript
+- CSS Modules
+- Framer Motion
+- Lucide React
 
-### 4. Construire la version finale (avant mise en ligne)
+**CMS & Back-end**
+- Sanity CMS
+- Next.js API Routes
+- Resend API
 
-```
-npm run build
-npm run start
-```
+**Déploiement & outils**
+- Vercel
+- Git / GitHub
+- Namecheap / DNS
+- Google Search Console
 
-## Structure du projet
+## Architecture
 
-```
-app/
-  page.js              → Page d'accueil
-  layout.js            → Structure commune (Header + Footer sur toutes les pages)
-  globals.css          → Styles globaux
-  services/page.js     → Page Services
-  a-propos/page.js     → Page À propos
-  realisations/page.js → Page Réalisations / Portfolio
-  blog/page.js         → Page Blog
-  contact/page.js      → Page Contact
-
-components/
-  Header.jsx           → Menu de navigation
-  Footer.jsx           → Pied de page
-  Hero.jsx             → Section hero (accueil)
-  TrustBand.jsx        → Bandeau logos
-  Services.jsx         → Cartes de services
-  Stats.jsx            → Statistiques
-  Portfolio.jsx        → Grille de projets avec filtres
-  Testimonials.jsx     → Témoignages clients
-  Blog.jsx             → Articles de blog
-  Contact.jsx          → Formulaire de contact
-
-public/
-  lsrha-logo-transparent.png → Le logo
-```
-
-## Ce qu'il reste à faire
-
-- Remplacer les logos "Ils nous font confiance" (Oppo, Samsung...) par vos vrais partenaires/clients, ou les retirer
-- Remplacer les 4 projets "VISUEL À VENIR" dans Portfolio.jsx par vos vrais projets (avec photos)
-- Remplacer les témoignages (Sarah K., Yassine B., Amira D.) par de vrais avis clients quand vous en aurez
-- Rédiger le contenu complet des 3 articles de blog (actuellement juste les titres)
-- Rendre le formulaire de contact fonctionnel (actuellement juste visuel — nécessite un service comme Formspree, ou une route API Next.js)
-- Ajouter les vrais liens réseaux sociaux dans le Footer
-
-## Mettre le site en ligne
-
-Ce projet peut être déployé gratuitement sur **Vercel** (créé par les créateurs de Next.js) :
-1. Créez un compte sur vercel.com
-2. Importez ce projet (via GitHub, ou glisser-déposer le dossier)
-3. Vercel s'occupe de tout le reste automatiquement
-
-Vous pourrez ensuite connecter votre nom de domaine (lsrha-agency.tn) une fois réservé.
-
-## Note sécurité
-
-Le projet utilise Next.js 14.2.35, une version corrigée des failles de sécurité connues. Pensez à vérifier régulièrement les mises à jour avec `npm outdated` avant la mise en ligne finale.
+```text
+app/          → Pages, routing et API Next.js
+components/   → Composants React réutilisables
+lib/sanity/   → Configuration et requêtes Sanity
+public/       → Ressources statiques
+studio/       → Configuration du CMS Sanity
